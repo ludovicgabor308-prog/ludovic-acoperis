@@ -13,9 +13,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Mansardări Acoperiș | Acopvest — Spațiu Locuibil la Etaj",
+  title: "Mansardări Acoperiș | LDV Acoperisuri — Spațiu Locuibil la Etaj",
   description: `Mansardări complete în ${coverageCountiesSentence}: pod locuibil, izolație termică, Velux, finisaje. Solicită ofertă!`,
-  keywords: `mansardări, amenajare pod, izolație termică, ferestre Velux, acoperiș, Acopvest, ${coverageCountiesOg}`,
+  keywords: `mansardări, amenajare pod, izolație termică, ferestre Velux, acoperiș, LDV Acoperisuri, ${coverageCountiesOg}`,
 }
 
 const benefits = [
@@ -148,7 +148,7 @@ export default function MansardariPage() {
             >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ProVestAcoperis-Montaj-Tigla-Ceramica-4-mGK1DZFMOQ7qXvwScWR64TgiF47gWU.webp"
-                alt="Acoperiș cu ferestre de mansardă Velux — Acopvest"
+                alt="Acoperiș cu ferestre de mansardă Velux — LDV Acoperisuri"
                 fill
                 priority
                 fetchPriority="high"

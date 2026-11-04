@@ -56,7 +56,7 @@ const stats = [
   { value: "10+", label: "Ani Experiență", icon: Clock },
   { value: "2000+", label: "Clienți Mulțumiți", icon: Users },
   { value: "100%", label: "Garanție Lucrări", icon: Shield },
-  { value: "5", label: "Județe Acoperite", icon: Star },
+  { value: "2", label: "Zone Acoperite", icon: Star },
 ];
 
 const benefits = [
@@ -96,7 +96,7 @@ export default function HomePage() {
                 pentru Casa Ta
               </h1>
               <p className="text-lg text-secondary-foreground/80 lg:text-xl text-pretty">
-                Echipa Provest Acoperis din {businessLocality} — specialiști în
+                Echipa LDV Acoperisuri din {businessLocality} — specialiști în
                 montaj acoperiș, reparații acoperiș, dulgherie și mansardări.
                 Peste 2000 de clienți mulțumiți; lucrăm în{" "}
                 {coverageCountiesSentence}.
@@ -137,7 +137,7 @@ export default function HomePage() {
               <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src={heroImageSrc}
-                  alt="Montaj profesional acoperiș cu țiglă metalică — Provest Acoperis"
+                  alt="Montaj profesional acoperiș cu țiglă metalică — LDV Acoperisuri"
                   width={1200}
                   height={900}
                   priority
@@ -241,7 +241,7 @@ export default function HomePage() {
               <div className="relative mx-auto aspect-3/4 w-full max-w-md overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src={secondaryImageSrc}
-                  alt="Echipa Provest Acoperis la montaj acoperiș"
+                  alt="Echipa LDV Acoperisuri la montaj acoperiș"
                   width={900}
                   height={1200}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -252,7 +252,7 @@ export default function HomePage() {
 
             <AnimatedSection animation="slide-in-right" delay={200}>
               <h2 className="font-serif text-3xl font-bold text-secondary-foreground lg:text-4xl text-balance">
-                De Ce Să Alegi Provest Acoperis?
+                De Ce Să Alegi LDV Acoperisuri?
               </h2>
               <p className="mt-4 text-lg text-secondary-foreground/80">
                 Peste 10 ani în construcții și acoperișuri — partener de

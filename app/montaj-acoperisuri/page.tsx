@@ -13,9 +13,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Montaj Acoperișuri România | Acopvest — Țiglă Metalică",
+  title: "Montaj Acoperișuri București - Ilfov | LDV Acoperisuri — Țiglă Metalică",
   description: `Montaj profesional acoperiș nou cu țiglă metalică în ${coverageCountiesSentence}. Modele: Clasic, Gotic, Balcanic și altele. Garanție, prețuri corecte. Ofertă gratuită!`,
-  keywords: `montaj acoperiș, țiglă metalică, acoperiș nou, Acopvest, ${coverageCountiesOg}, montaj profesional`,
+  keywords: `montaj acoperiș, țiglă metalică, acoperiș nou, LDV Acoperisuri, ${coverageCountiesOg}, montaj profesional`,
 }
 
 const roofTypes = [
@@ -118,7 +118,7 @@ export default function MontajAcopersuriPage() {
                 Montaj <span className="text-primary">Acoperișuri</span> Noi
               </h1>
               <p className="text-lg text-secondary-foreground/80 text-pretty">
-                Construiești sau renovezi? Echipa Acopvest îți oferă montaj profesional de acoperișuri cu țiglă
+                Construiești sau renovezi? Echipa LDV Acoperisuri îți oferă montaj profesional de acoperișuri cu țiglă
                 metalică de cea mai bună calitate. Alegem împreună modelul perfect pentru casa ta!
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -137,7 +137,7 @@ export default function MontajAcopersuriPage() {
             <AnimatedSection animation="slide-in-right" immediate className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7-lwPuST1UCW4Ul99oMXmUBeC4rIf1AU.webp"
-                alt="Montaj acoperiș nou cu țiglă metalică — Acopvest"
+                alt="Montaj acoperiș nou cu țiglă metalică — LDV Acoperisuri"
                 fill
                 priority
                 fetchPriority="high"

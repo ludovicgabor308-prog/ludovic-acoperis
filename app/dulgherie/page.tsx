@@ -13,9 +13,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Dulgherie Acoperiș | Acopvest — Șarpante și Structuri Lemn",
+  title: "Dulgherie Acoperiș | LDV Acoperisuri — Șarpante și Structuri Lemn",
   description: `Dulgherie și șarpante în ${coverageCountiesSentence}. Căpriori, grinzi, lemn de calitate. Solicită ofertă!`,
-  keywords: `dulgherie, șarpantă acoperiș, structură lemn, căpriori, grinzi, Acopvest, ${coverageCountiesOg}`,
+  keywords: `dulgherie, șarpantă acoperiș, structură lemn, căpriori, grinzi, LDV Acoperisuri, ${coverageCountiesOg}`,
 }
 
 const services = [
@@ -192,7 +192,7 @@ export default function DulgheriePage() {
               <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-zShBiZKpiKtCvWlom2Ev4vHakbauJQ.webp"
-                  alt="Structură lemn acoperiș — dulgherie Acopvest"
+                  alt="Structură lemn acoperiș — dulgherie LDV Acoperisuri"
                   fill
                   sizes="(max-width: 1024px) 100vw, 400px"
                   className="object-cover"

@@ -30,7 +30,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <span className="font-serif text-xl font-bold text-primary-foreground">
-                  PA
+                  LD
                 </span>
               </div>
               <span className="font-serif text-xl font-bold">{businessName}</span>

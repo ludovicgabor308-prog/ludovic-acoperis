@@ -26,7 +26,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between lg:h-20">
           <Link href="/" className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <span className="font-serif text-xl font-bold text-primary-foreground">PA</span>
+              <span className="font-serif text-xl font-bold text-primary-foreground">LD</span>
             </div>
             <div className="hidden sm:block">
               <span className="font-serif text-xl font-bold text-secondary-foreground">{businessName}</span>

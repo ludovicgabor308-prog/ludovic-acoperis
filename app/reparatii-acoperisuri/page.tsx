@@ -13,9 +13,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Reparații Acoperișuri România | Acopvest — Intervenții Rapide",
+  title: "Reparații Acoperișuri București - Ilfov | LDV Acoperisuri — Intervenții Rapide",
   description: `Reparații acoperiș profesionale în ${coverageCountiesSentence}: infiltrații, țiglă deteriorată, jgheaburi. Intervenții rapide, garanție. Sună acum!`,
-  keywords: `reparații acoperiș, infiltrații acoperiș, jgheaburi, țiglă metalică, Acopvest, ${coverageCountiesOg}`,
+  keywords: `reparații acoperiș, infiltrații acoperiș, jgheaburi, țiglă metalică, LDV Acoperisuri, ${coverageCountiesOg}`,
 }
 
 const problems = [
@@ -100,7 +100,7 @@ export default function ReparatiiAcopersuriPage() {
                 Reparații <span className="text-primary">Acoperișuri</span> Profesionale
               </h1>
               <p className="text-lg text-secondary-foreground/80 text-pretty">
-                Infiltrații? Țigle sparte? Jgheaburi deteriorate? Echipa Acopvest intervine rapid pentru a
+                Infiltrații? Țigle sparte? Jgheaburi deteriorate? Echipa LDV Acoperisuri intervine rapid pentru a
                 proteja casa ta de intemperii. Oferim diagnostic gratuit și soluții durabile cu garanție.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -123,7 +123,7 @@ export default function ReparatiiAcopersuriPage() {
             >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ProVestAcoperis-Montaj-Tigla-Ceramica-5-cKLVtGu1mhs070U8kCTpBLR2s2WbJv.webp"
-                alt="Reparații acoperiș profesionale — Acopvest"
+                alt="Reparații acoperiș profesionale — LDV Acoperisuri"
                 fill
                 priority
                 fetchPriority="high"

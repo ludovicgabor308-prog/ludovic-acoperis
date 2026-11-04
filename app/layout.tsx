@@ -32,11 +32,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title:
-    "Provest Acoperis | Acoperișuri România — Montaj, Reparații, Mansardări",
-  description: `Montaj acoperiș, reparații acoperiș și țiglă metalică în ${coverageCountiesSentence}. Dulgherie și mansardări. Bază în Satu Mare. 10+ ani experiență, 2000+ clienți. Ofertă gratuită.`,
+    "LDV Acoperisuri | Acoperișuri București - Ilfov — Montaj, Reparații, Mansardări",
+  description: `Montaj acoperiș, reparații acoperiș și țiglă metalică în ${coverageCountiesSentence}. Dulgherie și mansardări. Bază în București. 10+ ani experiență, 2000+ clienți. Ofertă gratuită.`,
   keywords: defaultSiteKeywords,
   openGraph: {
-    title: "Provest Acoperis | Acoperișuri profesionale în România",
+    title: "LDV Acoperisuri | Acoperișuri profesionale în București - Ilfov",
     description: `Montaj și reparații acoperiș cu garanție. Acoperim ${coverageCountiesOg}.`,
     type: "website",
     locale: "ro_RO",
@@ -79,7 +79,7 @@ export default function RootLayout({
             gtag('config', 'AW-18108989386');
             // Phone conversion config (forwarding / call reporting) — keep immediately after base config.
             gtag('config', 'AW-18108989386/OrmSCKPzoqccEMr_hLtD', {
-              'phone_conversion_number': '0756811640'
+              'phone_conversion_number': '0720854218'
             });
           `}
         </Script>

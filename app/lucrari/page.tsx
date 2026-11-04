@@ -12,9 +12,9 @@ import {
 } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Lucrări Acoperișuri | Acopvest — Portofoliu Montaj și Reparații",
-  description: `Galerie foto cu lucrări Acopvest: montaj acoperiș, țiglă metalică, dulgherie, izolație și reparații în ${coverageCountiesSentence}.`,
-  keywords: `lucrări acoperiș, portofoliu acoperișuri, galerie montaj acoperiș, țiglă metalică, izolație acoperiș, dulgherie, Acopvest, ${coverageCountiesOg}`,
+  title: "Lucrări Acoperișuri | LDV Acoperisuri — Portofoliu Montaj și Reparații",
+  description: `Galerie foto cu lucrări LDV Acoperisuri: montaj acoperiș, țiglă metalică, dulgherie, izolație și reparații în ${coverageCountiesSentence}.`,
+  keywords: `lucrări acoperiș, portofoliu acoperișuri, galerie montaj acoperiș, țiglă metalică, izolație acoperiș, dulgherie, LDV Acoperisuri, ${coverageCountiesOg}`,
   alternates: { canonical: "/lucrari" },
 };
 
@@ -162,7 +162,7 @@ export default function LucrariPage() {
             className="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-secondary p-6 text-center text-secondary-foreground lg:p-8"
           >
             <p className="mb-3 text-sm font-medium uppercase tracking-wide text-primary">
-              Portofoliu Acopvest
+              Portofoliu LDV Acoperisuri
             </p>
             <h1 className="font-serif text-4xl font-bold text-secondary-foreground sm:text-5xl text-balance">
               Lucrări realizate — acoperișuri, dulgherie și izolații
