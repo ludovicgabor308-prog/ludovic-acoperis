@@ -7,18 +7,17 @@ import {
   Users,
   Star,
   CheckCircle,
-  Phone,
-  MessageCircle,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animated-section";
+import { HeroActions } from "@/components/hero-actions";
+import { PageCta } from "@/components/page-cta";
+import { QuoteForm } from "@/components/quote-form";
+import { TrustPoints } from "@/components/trust-points";
 import {
-  businessLocality,
+  businessName,
   coverageCounties,
   coverageCountiesSentence,
-  phoneDisplay,
-  phoneE164,
 } from "@/lib/site-config";
 
 const services = [
@@ -78,88 +77,40 @@ export default function HomePage() {
   return (
     <>
       {/* Hero: immediate sections so LCP image is not hidden behind opacity-0. */}
-      <section className="relative overflow-hidden bg-secondary py-16 lg:py-24">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] opacity-5" />
+      <section className="relative overflow-hidden bg-secondary py-12 lg:py-20">
         <div className="container relative mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-start gap-10 lg:grid-cols-2">
             <AnimatedSection
               animation="slide-in-left"
               immediate
-              className="space-y-6 rounded-2xl border border-white/10 bg-secondary p-6 text-secondary-foreground lg:p-8"
+              className="space-y-6 text-secondary-foreground"
             >
               <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
                 <Shield className="h-4 w-4" />
-                Peste 10 ani — montaj acoperiș și țiglă metalică
+                Intervenții non-stop în București și Ilfov
               </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-secondary-foreground sm:text-5xl lg:text-6xl text-balance">
-                Acoperișuri de <span className="text-primary">Încredere</span>{" "}
-                pentru Casa Ta
+              <h1 className="font-serif text-4xl font-bold leading-tight text-balance text-secondary-foreground sm:text-5xl lg:text-6xl">
+                Reparații Acoperișuri{" "}
+                <span className="text-primary">24/7</span> în București
               </h1>
-              <p className="text-lg text-secondary-foreground/80 lg:text-xl text-pretty">
-                Echipa LDV Acoperisuri din {businessLocality} — specialiști în
-                montaj acoperiș, reparații acoperiș, dulgherie și mansardări.
-                Peste 2000 de clienți mulțumiți; lucrăm în{" "}
-                {coverageCountiesSentence}.
+              <p className="text-lg text-pretty text-secondary-foreground/80 lg:text-xl">
+                {businessName} intervine la infiltrații, țiglă spartă și
+                montaj nou. Peste 2000 de clienți în {coverageCountiesSentence}.
+                Evaluare gratuită, garanție la lucrare.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  <a
-                    href={`tel:${phoneE164}`}
-                    data-cta="hero-call"
-                    data-phone={phoneE164}
-                    className="flex items-center gap-2"
-                  >
-                    <Phone className="h-5 w-5" />
-                    Sună Instant
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/contact" className="flex items-center gap-2">
-                    <MessageCircle className="h-5 w-5" />
-                    Cere Ofertă
-                  </Link>
-                </Button>
-              </div>
+              <HeroActions callCta="home-hero-call" />
+              <TrustPoints onDark />
             </AnimatedSection>
 
-            <AnimatedSection
-              animation="slide-in-right"
-              immediate
-              delay={0}
-              className="relative"
-            >
-              <div className="absolute -inset-4 rounded-2xl bg-linear-to-br from-primary/20 to-accent/20 blur-2xl" />
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src={heroImageSrc}
-                  alt="Montaj profesional acoperiș cu țiglă metalică — LDV Acoperisuri"
-                  width={1200}
-                  height={900}
-                  priority
-                  fetchPriority="high"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 rounded-xl bg-card p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <Star className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground">2000+</p>
-                    <p className="text-sm text-muted-foreground">
-                      Clienți Mulțumiți
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
+            <div id="cere-oferta" className="scroll-mt-24">
+              <QuoteForm
+                variant="compact"
+                defaultService="reparatii"
+                surface="light"
+                heading="Spune-ne ce s-a întâmplat"
+                description="Nume și telefon sunt de ajuns. Te sunăm imediat, zi și noapte."
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -185,6 +136,30 @@ export default function HomePage() {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roof photo sits under the offer so the form stays the first screen. */}
+      <section className="bg-background py-12 lg:py-16">
+        <div className="container mx-auto px-4">
+          <div className="relative mx-auto aspect-16/7 w-full max-w-5xl overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src={heroImageSrc}
+              alt={`Montaj acoperiș cu țiglă metalică — ${businessName}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl bg-card/95 p-3 shadow-lg">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10">
+                <Star className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xl font-bold text-foreground">2000+</p>
+                <p className="text-xs text-muted-foreground">Clienți mulțumiți</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -241,7 +216,7 @@ export default function HomePage() {
               <div className="relative mx-auto aspect-3/4 w-full max-w-md overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src={secondaryImageSrc}
-                  alt="Echipa LDV Acoperisuri la montaj acoperiș"
+                  alt={`Echipă ${businessName} la montaj acoperiș`}
                   width={900}
                   height={1200}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -252,7 +227,7 @@ export default function HomePage() {
 
             <AnimatedSection animation="slide-in-right" delay={200}>
               <h2 className="font-serif text-3xl font-bold text-secondary-foreground lg:text-4xl text-balance">
-                De Ce Să Alegi LDV Acoperisuri?
+                De ce să ne suni acum?
               </h2>
               <p className="mt-4 text-lg text-secondary-foreground/80">
                 Peste 10 ani în construcții și acoperișuri — partener de
@@ -268,9 +243,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button size="lg" asChild>
-                  <Link href="/contact">Solicită Ofertă Gratuită</Link>
-                </Button>
+                <HeroActions callCta="home-why-call" />
               </div>
             </AnimatedSection>
           </div>
@@ -311,42 +284,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-              Ai Nevoie de un Acoperiș Nou sau de Reparații?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactează-ne pentru evaluare gratuită la fața locului și ofertă
-              personalizată.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact" className="flex items-center gap-2">
-                  <MessageCircle className="h-5 w-5" />
-                  Solicită Ofertă Gratuită
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-                asChild
-              >
-                <a
-                  href={`tel:${phoneE164}`}
-                  className="flex items-center gap-2"
-                >
-                  <Phone className="h-5 w-5" />
-                  {phoneDisplay}
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageCta
+        title="Acoperișul curge sau vrei montaj nou?"
+        description="Sună acum pentru intervenție 24/7 în București, sau lasă numărul și te contactăm imediat."
+      />
     </>
   );
 }

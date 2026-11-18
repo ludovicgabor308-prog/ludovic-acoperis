@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import { coverageCountiesSentence } from "@/lib/site-config"
+import { businessName, coverageCountiesSentence } from "@/lib/site-config"
 
-/** SEO for client-only contact page (metadata must live in a Server Component). */
+/** SEO for the contact page. Metadata stays in a Server Component. */
 export const metadata: Metadata = {
-  title: "Contact | LDV Acoperisuri — Ofertă Montaj și Reparații Acoperiș",
-  description: `Contactează LDV Acoperisuri pentru ofertă gratuită: montaj acoperiș, reparații, dulgherie, mansardări în ${coverageCountiesSentence}.`,
+  title: `${businessName} | Contact și ofertă gratuită`,
+  description: `Sună ${businessName} non-stop pentru ofertă gratuită: reparații, montaj, dulgherie și mansardări în ${coverageCountiesSentence}.`,
 }
 
 export default function ContactLayout({ children }: { children: ReactNode }) {

@@ -11,6 +11,7 @@ import { AppToaster } from "@/components/app-toaster";
 import { JsonLd } from "@/components/json-ld";
 import { FloatingContactCta } from "@/components/floating-contact-cta";
 import {
+  businessName,
   coverageCountiesOg,
   coverageCountiesSentence,
   defaultSiteKeywords,
@@ -31,13 +32,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title:
-    "LDV Acoperisuri | Acoperișuri București - Ilfov — Montaj, Reparații, Mansardări",
-  description: `Montaj acoperiș, reparații acoperiș și țiglă metalică în ${coverageCountiesSentence}. Dulgherie și mansardări. Bază în București. 10+ ani experiență, 2000+ clienți. Ofertă gratuită.`,
+  title: `${businessName} | Montaj, reparații și urgențe non-stop`,
+  description: `Reparații acoperișuri 24/7 în ${coverageCountiesSentence}. Montaj, dulgherie și mansardări. Evaluare gratuită, garanție, peste 10 ani experiență.`,
   keywords: defaultSiteKeywords,
   openGraph: {
-    title: "LDV Acoperisuri | Acoperișuri profesionale în București - Ilfov",
-    description: `Montaj și reparații acoperiș cu garanție. Acoperim ${coverageCountiesOg}.`,
+    title: `${businessName} | Acoperișuri non-stop`,
+    description: `Reparații și montaj acoperiș 24/7 în ${coverageCountiesOg}. Sună pentru intervenție sau cere ofertă gratuită.`,
     type: "website",
     locale: "ro_RO",
     url: siteUrl,
@@ -79,7 +79,7 @@ export default function RootLayout({
             gtag('config', 'AW-18108989386');
             // Phone conversion config (forwarding / call reporting) — keep immediately after base config.
             gtag('config', 'AW-18108989386/OrmSCKPzoqccEMr_hLtD', {
-              'phone_conversion_number': '0720854218'
+              'phone_conversion_number': '0734591048'
             });
           `}
         </Script>
@@ -102,7 +102,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${sourceSerif.variable} ${inter.variable} font-sans antialiased`}
+        className={`${sourceSerif.variable} ${inter.variable} pb-24 font-sans antialiased md:pb-0`}
       >
         <JsonLd />
         <Header />

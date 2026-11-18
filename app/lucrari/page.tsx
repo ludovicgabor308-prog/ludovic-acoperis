@@ -1,20 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
+import { HeroActions } from "@/components/hero-actions";
+import { PageCta } from "@/components/page-cta";
+import { QuoteBand } from "@/components/quote-band";
+import { TrustPoints } from "@/components/trust-points";
 import {
+  businessName,
   coverageCountiesOg,
   coverageCountiesSentence,
-  phoneDisplay,
-  phoneE164,
 } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Lucrări Acoperișuri | LDV Acoperisuri — Portofoliu Montaj și Reparații",
-  description: `Galerie foto cu lucrări LDV Acoperisuri: montaj acoperiș, țiglă metalică, dulgherie, izolație și reparații în ${coverageCountiesSentence}.`,
-  keywords: `lucrări acoperiș, portofoliu acoperișuri, galerie montaj acoperiș, țiglă metalică, izolație acoperiș, dulgherie, LDV Acoperisuri, ${coverageCountiesOg}`,
+  title: `${businessName} | Lucrări realizate`,
+  description: `Lucrări de acoperiș 24/7 în ${coverageCountiesSentence}: montaj, țiglă metalică, dulgherie și reparații. Vezi pozele și sună pentru o lucrare la fel.`,
+  keywords: `lucrări acoperiș, portofoliu acoperișuri, lucrări acoperișuri 24/7 București, țiglă metalică, dulgherie, ${businessName}, ${coverageCountiesOg}`,
   alternates: { canonical: "/lucrari" },
 };
 
@@ -162,41 +162,30 @@ export default function LucrariPage() {
             className="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-secondary p-6 text-center text-secondary-foreground lg:p-8"
           >
             <p className="mb-3 text-sm font-medium uppercase tracking-wide text-primary">
-              Portofoliu LDV Acoperisuri
+              Lucrări Acoperișuri 24/7 în București
             </p>
-            <h1 className="font-serif text-4xl font-bold text-secondary-foreground sm:text-5xl text-balance">
-              Lucrări realizate — acoperișuri, dulgherie și izolații
+            <h1 className="font-serif text-4xl font-bold text-balance text-secondary-foreground sm:text-5xl">
+              Lucrări Acoperișuri 24/7 în București
             </h1>
-            <p className="mt-4 text-lg text-secondary-foreground/80 text-pretty">
-              Selecție din proiectele noastre recente. Fotografiile sunt grupate
-              pe proiecte și tipuri de lucrări pentru o privire clară asupra
-              calității execuției.
+            <p className="mt-4 text-lg text-pretty text-secondary-foreground/80">
+              Montaje, reparații, dulgherie și izolații făcute de {businessName} în{" "}
+              {coverageCountiesSentence}. Dacă vrei același rezultat la casa ta, sună acum.
             </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <Button size="lg" asChild>
-                <a
-                  href={`tel:${phoneE164}`}
-                  data-cta="lucrari-call"
-                  data-phone={phoneE164}
-                  className="inline-flex items-center gap-2"
-                >
-                  <Phone className="h-5 w-5" />
-                  Sună Instant: {phoneDisplay}
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2"
-                >
-                  Cere Ofertă
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
+            <div className="mt-6 flex justify-center">
+              <HeroActions callCta="lucrari-hero-call" />
+            </div>
+            <div className="mt-6 flex justify-center">
+              <TrustPoints onDark />
             </div>
           </AnimatedSection>
         </div>
       </section>
+
+      <QuoteBand
+        defaultService="reparatii"
+        title="Vrei o lucrare ca în poze?"
+        description="Lasă telefonul. Îți spunem ce putem face la casa ta în București sau Ilfov și când putem veni."
+      />
 
       {/* Galleries */}
       <section className="py-16 lg:py-20">
@@ -254,40 +243,10 @@ export default function LucrariPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-              Ți-a plăcut ce ai văzut?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Spune-ne despre proiectul tău — revenim rapid cu o ofertă
-              personalizată.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Solicită Ofertă Gratuită</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                asChild
-              >
-                <a
-                  href={`tel:${phoneE164}`}
-                  data-cta="lucrari-cta-call"
-                  data-phone={phoneE164}
-                  className="flex items-center gap-2"
-                >
-                  <Phone className="h-5 w-5" />
-                  {phoneDisplay}
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageCta
+        title="Ți-a plăcut ce ai văzut?"
+        description="Sună și spune-ne proiectul. Răspundem 24/7 și revenim cu o ofertă clară."
+      />
     </>
   );
 }

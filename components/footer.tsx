@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { BrandMark } from "@/components/brand-mark";
 import {
   businessAddressLine,
   businessName,
@@ -27,18 +28,10 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="font-serif text-xl font-bold text-primary-foreground">
-                  LD
-                </span>
-              </div>
-              <span className="font-serif text-xl font-bold">{businessName}</span>
-            </div>
+            <BrandMark inverted />
             <p className="text-sm text-secondary-foreground/80">
-              Experiență de peste 10 ani în montaj și reparații acoperișuri.
-              Calitate garantată și prețuri corecte pentru toate proiectele
-              dumneavoastră.
+              {businessName}. Peste 10 ani de montaj și reparații, intervenții
+              non-stop în București și Ilfov. Prețuri corecte, garanție la lucrare.
             </p>
             <div className="flex gap-3 pt-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary-foreground">

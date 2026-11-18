@@ -1,21 +1,22 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Phone, Shield, Award, Truck } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Award, Shield, Truck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/animated-section"
+import { HeroActions } from "@/components/hero-actions"
+import { PageCta } from "@/components/page-cta"
+import { QuoteBand } from "@/components/quote-band"
+import { TrustPoints } from "@/components/trust-points"
 import type { Metadata } from "next"
 import {
+  businessName,
   coverageCountiesOg,
   coverageCountiesSentence,
-  phoneDisplay,
-  phoneE164,
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Montaj Acoperișuri București - Ilfov | LDV Acoperisuri — Țiglă Metalică",
-  description: `Montaj profesional acoperiș nou cu țiglă metalică în ${coverageCountiesSentence}. Modele: Clasic, Gotic, Balcanic și altele. Garanție, prețuri corecte. Ofertă gratuită!`,
-  keywords: `montaj acoperiș, țiglă metalică, acoperiș nou, LDV Acoperisuri, ${coverageCountiesOg}, montaj profesional`,
+  title: `${businessName} | Montaj țiglă metalică`,
+  description: `Montaj acoperiș 24/7 în ${coverageCountiesSentence}, cu țiglă metalică. Garanție și ofertă gratuită. Sună acum!`,
+  keywords: `montaj acoperiș, montaj acoperișuri 24/7 București, țiglă metalică, acoperiș nou, ${businessName}, ${coverageCountiesOg}`,
 }
 
 const roofTypes = [
@@ -112,32 +113,23 @@ export default function MontajAcopersuriPage() {
             <AnimatedSection animation="slide-in-left" immediate className="space-y-6 rounded-2xl border border-white/10 bg-secondary p-6 text-secondary-foreground lg:p-8">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
                 <Award className="h-4 w-4" />
-                Montaj Profesional cu Garanție
+                Montaj cu garanție, program non-stop
               </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-secondary-foreground sm:text-5xl text-balance">
-                Montaj <span className="text-primary">Acoperișuri</span> Noi
+              <h1 className="font-serif text-4xl font-bold leading-tight text-balance text-secondary-foreground sm:text-5xl">
+                Montaj Acoperișuri <span className="text-primary">24/7</span> în București
               </h1>
-              <p className="text-lg text-secondary-foreground/80 text-pretty">
-                Construiești sau renovezi? Echipa LDV Acoperisuri îți oferă montaj profesional de acoperișuri cu țiglă
-                metalică de cea mai bună calitate. Alegem împreună modelul perfect pentru casa ta!
+              <p className="text-lg text-pretty text-secondary-foreground/80">
+                Construiești sau renovezi? {businessName} montează țiglă metalică în {coverageCountiesSentence}.
+                Alegem modelul, măsurăm gratuit și îți dăm prețul înainte să începem.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                  <Link href="/contact" className="flex items-center gap-2">
-                    Solicită Ofertă Gratuită
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/contact">Solicită Consultanță</Link>
-                </Button>
-              </div>
+              <HeroActions callCta="montaj-hero-call" />
+              <TrustPoints onDark />
             </AnimatedSection>
 
             <AnimatedSection animation="slide-in-right" immediate className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7-lwPuST1UCW4Ul99oMXmUBeC4rIf1AU.webp"
-                alt="Montaj acoperiș nou cu țiglă metalică — LDV Acoperisuri"
+                alt={`Montaj acoperiș nou cu țiglă metalică — ${businessName}`}
                 fill
                 priority
                 fetchPriority="high"
@@ -148,6 +140,12 @@ export default function MontajAcopersuriPage() {
           </div>
         </div>
       </section>
+
+      <QuoteBand
+        defaultService="montaj"
+        title="Cere prețul pentru acoperișul nou"
+        description="Spune-ne localitatea și tipul de învelitoare. Revenim cu o estimare și programăm măsurătoarea gratuită în București sau Ilfov."
+      />
 
       {/* Roof Types */}
       <section className="py-16 lg:py-24">
@@ -279,35 +277,10 @@ export default function MontajAcopersuriPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-              Pregătit pentru un Acoperiș Nou?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactează-ne pentru o evaluare gratuită la fața locului și o ofertă personalizată.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Solicită Ofertă Gratuită</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-                asChild
-              >
-                <a href={`tel:${phoneE164}`} className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  {phoneDisplay}
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageCta
+        title="Pregătit pentru un acoperiș nou?"
+        description="Sună pentru o măsurătoare gratuită în București sau lasă numărul în formular."
+      />
     </>
   )
 }

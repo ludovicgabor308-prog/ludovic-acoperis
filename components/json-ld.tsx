@@ -2,6 +2,7 @@ import {
   businessCounty,
   businessLocality,
   businessName,
+  businessNamePlain,
   coverageLocations,
   coverageLocationsSentence,
   email,
@@ -17,9 +18,11 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     name: businessName,
+    alternateName: businessNamePlain,
     url: siteUrl,
     telephone: phoneE164,
     email,
+    openingHours: "Mo-Su 00:00-23:59",
     address: {
       "@type": "PostalAddress",
       addressLocality: businessLocality,
@@ -30,7 +33,7 @@ export function JsonLd() {
       "@type": "City",
       name: city,
     })),
-    description: `Montaj și reparații acoperișuri, țiglă metalică, dulgherie și mansardări în ${coverageLocationsSentence}.`,
+    description: `Reparații și montaj acoperișuri 24/7 în ${coverageLocationsSentence}. Țiglă metalică, dulgherie și mansardări. Evaluare gratuită.`,
   }
 
   return (

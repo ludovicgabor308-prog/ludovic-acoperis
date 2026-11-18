@@ -1,11 +1,15 @@
 import Image from "next/image"
-import Link from "next/link"
-import { CheckCircle, Phone, ArrowRight, TreePine } from "lucide-react"
+import { CheckCircle, TreePine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/animated-section"
+import { HeroActions } from "@/components/hero-actions"
+import { PageCta } from "@/components/page-cta"
+import { QuoteBand } from "@/components/quote-band"
+import { TrustPoints } from "@/components/trust-points"
 import type { Metadata } from "next"
 import {
+  businessName,
   coverageCountiesOg,
   coverageCountiesSentence,
   phoneDisplay,
@@ -13,9 +17,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Dulgherie Acoperiș | LDV Acoperisuri — Șarpante și Structuri Lemn",
-  description: `Dulgherie și șarpante în ${coverageCountiesSentence}. Căpriori, grinzi, lemn de calitate. Solicită ofertă!`,
-  keywords: `dulgherie, șarpantă acoperiș, structură lemn, căpriori, grinzi, LDV Acoperisuri, ${coverageCountiesOg}`,
+  title: `${businessName} | Dulgherie și șarpante`,
+  description: `Dulgherie acoperiș 24/7 în ${coverageCountiesSentence}. Căpriori, grinzi, lemn tratat. Sună pentru ofertă!`,
+  keywords: `dulgherie, șarpantă acoperiș, dulgherie 24/7 București, structură lemn, căpriori, grinzi, ${businessName}, ${coverageCountiesOg}`,
 }
 
 const services = [
@@ -90,29 +94,17 @@ export default function DulgheriePage() {
             <AnimatedSection animation="slide-in-left" immediate className="space-y-6 rounded-2xl border border-white/10 bg-secondary p-6 text-secondary-foreground lg:p-8">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
                 <TreePine className="h-4 w-4" />
-                Meșteșug tradițional pentru acoperișul tău
+                Șarpante noi și reparații, non-stop
               </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-secondary-foreground sm:text-5xl text-balance">
-                Servicii de <span className="text-primary">Dulgherie</span> Profesională
+              <h1 className="font-serif text-4xl font-bold leading-tight text-balance text-secondary-foreground sm:text-5xl">
+                Dulgherie Acoperiș <span className="text-primary">24/7</span> în București
               </h1>
-              <p className="text-lg text-secondary-foreground/80 text-pretty">
-                Șarpante, căpriori și grinzi în {coverageCountiesSentence}. Lemn de calitate, meșteri experimentați,
-                tehnici moderne.
+              <p className="text-lg text-pretty text-secondary-foreground/80">
+                Șarpante, căpriori și grinzi în {coverageCountiesSentence}. Lemn uscat și tratat, meșteri cu peste 10
+                ani experiență. {businessName} vine la evaluare fără cost.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                  <Link href="/contact" className="flex items-center gap-2">
-                    Solicită Ofertă
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href={`tel:${phoneE164}`} className="flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    Sună Acum
-                  </a>
-                </Button>
-              </div>
+              <HeroActions callCta="dulgherie-hero-call" />
+              <TrustPoints onDark />
             </AnimatedSection>
 
             <AnimatedSection
@@ -133,6 +125,12 @@ export default function DulgheriePage() {
           </div>
         </div>
       </section>
+
+      <QuoteBand
+        defaultService="dulgherie"
+        title="Șarpanta cere o verificare?"
+        description="Lasă telefonul. Venim în București sau Ilfov, vedem lemnul și îți spunem ce se repară și ce se înlocuiește."
+      />
 
       {/* Services */}
       <section className="py-16 lg:py-24">
@@ -192,7 +190,7 @@ export default function DulgheriePage() {
               <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-zShBiZKpiKtCvWlom2Ev4vHakbauJQ.webp"
-                  alt="Structură lemn acoperiș — dulgherie LDV Acoperisuri"
+                  alt={`Structură lemn acoperiș — dulgherie ${businessName}`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 400px"
                   className="object-cover"
@@ -217,7 +215,7 @@ export default function DulgheriePage() {
               </ul>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href="/contact">Contactează-ne</Link>
+                  <a href={`tel:${phoneE164}`}>Sună: {phoneDisplay}</a>
                 </Button>
               </div>
             </AnimatedSection>
@@ -225,35 +223,10 @@ export default function DulgheriePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-              Ai Nevoie de Lucrări de Dulgherie?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactează-ne pentru o evaluare gratuită și o ofertă personalizată.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Solicită Ofertă Gratuită</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-                asChild
-              >
-                <a href={`tel:${phoneE164}`} className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  {phoneDisplay}
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageCta
+        title="Ai nevoie de lucrări de dulgherie?"
+        description="Sună pentru o evaluare gratuită în București sau trimite cererea din formular."
+      />
     </>
   )
 }

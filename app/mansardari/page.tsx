@@ -1,11 +1,15 @@
 import Image from "next/image"
-import Link from "next/link"
-import { CheckCircle, Phone, ArrowRight, Home, Lightbulb, Thermometer, Maximize } from "lucide-react"
+import { CheckCircle, Home, Lightbulb, Thermometer, Maximize } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/animated-section"
+import { HeroActions } from "@/components/hero-actions"
+import { PageCta } from "@/components/page-cta"
+import { QuoteBand } from "@/components/quote-band"
+import { TrustPoints } from "@/components/trust-points"
 import type { Metadata } from "next"
 import {
+  businessName,
   coverageCountiesOg,
   coverageCountiesSentence,
   phoneDisplay,
@@ -13,9 +17,9 @@ import {
 } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Mansardări Acoperiș | LDV Acoperisuri — Spațiu Locuibil la Etaj",
-  description: `Mansardări complete în ${coverageCountiesSentence}: pod locuibil, izolație termică, Velux, finisaje. Solicită ofertă!`,
-  keywords: `mansardări, amenajare pod, izolație termică, ferestre Velux, acoperiș, LDV Acoperisuri, ${coverageCountiesOg}`,
+  title: `${businessName} | Mansardări`,
+  description: `Mansardări 24/7 în ${coverageCountiesSentence}: pod locuibil, izolație, ferestre, finisaje. Sună pentru consultanță gratuită!`,
+  keywords: `mansardări, mansardare 24/7 București, amenajare pod, izolație termică, ferestre Velux, acoperiș, ${businessName}, ${coverageCountiesOg}`,
 }
 
 const benefits = [
@@ -116,29 +120,17 @@ export default function MansardariPage() {
             <AnimatedSection animation="slide-in-left" immediate className="space-y-6 rounded-2xl border border-white/10 bg-secondary p-6 text-secondary-foreground lg:p-8">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
                 <Home className="h-4 w-4" />
-                Transformă Podul în Casă
+                Din pod, cameră locuibilă
               </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-secondary-foreground sm:text-5xl text-balance">
-                Servicii de <span className="text-primary">Mansardare</span> Complete
+              <h1 className="font-serif text-4xl font-bold leading-tight text-balance text-secondary-foreground sm:text-5xl">
+                Mansardări <span className="text-primary">24/7</span> în București
               </h1>
-              <p className="text-lg text-secondary-foreground/80 text-pretty">
-                Mai mult spațiu locuibil în {coverageCountiesSentence}: transformăm podul într-o cameră modernă, cu
-                izolație și finisaje. De la structură la acoperiș, gestionăm proiectul complet.
+              <p className="text-lg text-pretty text-secondary-foreground/80">
+                Mai mult spațiu în {coverageCountiesSentence}: {businessName} transformă podul într-o cameră cu
+                izolație și finisaje. De la structură la acoperiș, un singur telefon.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                  <Link href="/contact" className="flex items-center gap-2">
-                    Solicită Consultanță
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href={`tel:${phoneE164}`} className="flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    Sună Acum
-                  </a>
-                </Button>
-              </div>
+              <HeroActions callCta="mansardari-hero-call" />
+              <TrustPoints onDark />
             </AnimatedSection>
 
             <AnimatedSection
@@ -148,7 +140,7 @@ export default function MansardariPage() {
             >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ProVestAcoperis-Montaj-Tigla-Ceramica-4-mGK1DZFMOQ7qXvwScWR64TgiF47gWU.webp"
-                alt="Acoperiș cu ferestre de mansardă Velux — LDV Acoperisuri"
+                alt={`Acoperiș cu ferestre de mansardă — ${businessName}`}
                 fill
                 priority
                 fetchPriority="high"
@@ -159,6 +151,12 @@ export default function MansardariPage() {
           </div>
         </div>
       </section>
+
+      <QuoteBand
+        defaultService="mansardare"
+        title="Vrei să vezi dacă podul se poate locui?"
+        description="Lasă telefonul. Verificăm structura în București sau Ilfov și îți spunem ce spațiu poți câștiga, fără obligații."
+      />
 
       {/* Benefits */}
       <section className="py-16 lg:py-24">
@@ -255,7 +253,7 @@ export default function MansardariPage() {
               </ul>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href="/contact">Discută Proiectul Tău</Link>
+                  <a href={`tel:${phoneE164}`}>Sună: {phoneDisplay}</a>
                 </Button>
               </div>
             </AnimatedSection>
@@ -277,35 +275,10 @@ export default function MansardariPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl text-balance">
-              Vrei să Îți Extinzi Locuința?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/90">
-              Contactează-ne pentru o consultanță gratuită. Îți spunem ce posibilități ai!
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Programează Consultanță</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-                asChild
-              >
-                <a href={`tel:${phoneE164}`} className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  {phoneDisplay}
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageCta
+        title="Vrei să extinzi locuința fără șantier la sol?"
+        description="Sună pentru o consultanță gratuită în București sau trimite cererea din formular."
+      />
     </>
   )
 }
